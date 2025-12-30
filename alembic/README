@@ -1,1 +1,22 @@
-Generic single-database configuration.
+# 📊 Móveis ERP - Dashboard de Business Intelligence
+
+Este sistema é um ecossistema de **BI e Gestão de Inventário** projetado para o setor de móveis, integrando uma API de alta performance com uma interface visual dinâmica.
+
+---
+
+## 🚀 Como Instalar e Rodar
+
+### 1. Clonar o Repositório
+```bash
+git clone [https://github.com/AndersonDeOliveiraSoares/product_sale_fastapi.git](https://github.com/AndersonDeOliveiraSoares/product_sale_fastapi.git)
+cd product_sale_fastapi
+```
+
+###2. Configurar Variáveis de Ambiente
+ Crie um ficheiro .env na raiz do projeto com as suas credenciais:Generic single-database configuration.
+ ```bash
+ POSTGRES_DB=furniture_db
+POSTGRES_USER=user
+POSTGRES_PASSWORD=pass
+DATABASE_URL=postgresql://user:pass@db:5432/furniture_db
+```
