@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+alembic
+pydantic
+pydantic-settings
+python-jose[cryptography]  # Para o JWT
+passlib[bcrypt]            # Para hash de senha
+email-validator
+streamlit
+pandas
+requests
+plotly
