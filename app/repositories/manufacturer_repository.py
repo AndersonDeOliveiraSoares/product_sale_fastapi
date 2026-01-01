@@ -1,5 +1,4 @@
 from sqlalchemy.orm import Session
-from app.models.manufacturer import Manufacturer
 from sqlalchemy import func
 from app.models.manufacturer import Manufacturer
 from app.models.product import Product

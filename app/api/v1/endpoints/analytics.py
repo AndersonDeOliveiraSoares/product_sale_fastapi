@@ -10,9 +10,10 @@ from app.schemas.analytics import (
     TopCustomerResponse,
     ProductSalesResponse,
     ManufacturerRankingResponse,
-    GlobalKPIsResponse
+    GlobalKPIsResponse,
+    SalesByCategoryResponse
 )
-from app.schemas.analytics import SalesByCategoryResponse
+from app.schemas.product import ProductResponse
 router = APIRouter()
 
 @router.get("/top-customers", response_model=List[TopCustomerResponse])
@@ -41,6 +42,6 @@ def read_kpis(db: Session = Depends(get_db)):
 def read_sales_by_category(db: Session = Depends(get_db)):
     return SaleRepository(db).get_sales_by_category()
 
-@router.get("/low-stock-report")
+@router.get("/low-stock-report", response_model=List[ProductResponse])
 def read_low_stock(db: Session = Depends(get_db), threshold: int = 25):
     return ProductRepository(db).get_low_stock_alerts(threshold)

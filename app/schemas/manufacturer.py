@@ -1,6 +1,7 @@
 from typing import Optional
 from typing import List
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, ConfigDict
+from datetime import datetime
 
 class ManufacturerBase(BaseModel):
     name: str
@@ -11,9 +12,10 @@ class ManufacturerCreate(ManufacturerBase):
 
 class ManufacturerResponse(ManufacturerBase):
     id: int
+    model_config = ConfigDict(from_attributes=True)
+    created_at: datetime
+    updated_at: Optional[datetime] = None
 
-    class Config:
-        from_attributes = True
 
 class ManufacturerPaginationResponse(BaseModel):
     total: int

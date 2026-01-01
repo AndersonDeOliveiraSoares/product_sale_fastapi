@@ -8,7 +8,7 @@ from app.schemas.product import ProductPaginationResponse
 
 router = APIRouter()
 
-@router.post("/", response_model=ProductResponse)
+@router.post("/", response_model=ProductResponse, status_code=201)
 def create_product(product: ProductCreate, db: Session = Depends(get_db)):
     controller = ProductController(db)
     return controller.create_product(product)
